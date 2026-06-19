@@ -1,7 +1,7 @@
 // ============ Wedding Invitation interactivity ============
 
 // ---- Wedding date target ----
-const WEDDING_DATE = new Date('2026-07-06T00:00:00+05:30');
+const WEDDING_DATE = new Date('2026-06-24T00:00:00+05:30');
 
 // ---- Envelope cover open ----
 const cover = document.getElementById('cover');
