@@ -105,8 +105,8 @@ setInterval(updateCountdown, 1000);
   function paintScratchLayer() {
     const ctx = canvas.getContext('2d');
     const grad = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
-    grad.addColorStop(0, '#D18C47');
-    grad.addColorStop(1, '#9E662E');
+    grad.addColorStop(0, '#B62039');
+    grad.addColorStop(1, '#5C0F14');
     ctx.fillStyle = grad;
     ctx.fillRect(0, 0, canvas.width, canvas.height);
     ctx.fillStyle = 'rgba(255,255,255,0.9)';

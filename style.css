@@ -56,7 +56,7 @@ img { max-width: 100%; display: block; }
   position: fixed;
   inset: 0;
   pointer-events: none;
-  z-index: 5;
+  z-index: 110;
   overflow: hidden;
 }
 .petal {
@@ -88,7 +88,7 @@ img { max-width: 100%; display: block; }
   position: fixed;
   inset: 0;
   pointer-events: none;
-  z-index: 6;
+  z-index: 111;
   animation: butterfly-fly 18s linear infinite;
 }
 .butterfly-wings {
@@ -219,21 +219,28 @@ section {
 
 /* ---------------- Welcome / Shloka ---------------- */
 #welcome {
+  min-height: 100vh;
   background-image: url('assets/g-welcome-bg-BCda9f2G.png');
   background-size: cover;
-  background-position: top center;
+  background-position: center center;
   background-repeat: no-repeat;
-  padding-top: 60px;
+  padding: 48px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 #welcome .ganesh { width: 70px; margin: 0 auto 14px; }
 #welcome .shloka-pill { margin-bottom: 18px; color: var(--maroon); }
 #welcome .shloka-box {
-  background: rgba(253,250,244,0.85);
-  border: 1px solid rgba(92,15,20,0.15);
-  border-radius: 8px;
-  padding: 18px 24px;
-  margin: 0 auto 16px;
-  max-width: 560px;
+  background: rgba(252,248,242,0.95);
+  border: 1.6px solid rgb(232,209,186);
+  border-radius: 16px;
+  padding: 20px;
+  margin: 0 auto 24px;
+  max-width: 512px;
+  box-shadow: 0 20px 60px -20px rgba(119,34,48,0.25);
+  backdrop-filter: blur(4px);
 }
 #welcome .shloka-deva {
   font-family: var(--font-deva);
@@ -243,11 +250,15 @@ section {
   margin: 0;
 }
 #welcome .shloka-translit {
-  font-family: var(--font-heading);
-  font-size: 12px;
+  font-family: var(--font-body);
+  font-style: italic;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 14px;
   letter-spacing: 0.06em;
-  color: var(--maroon);
-  margin: 10px 0 40px;
+  color: rgba(121,21,38,0.8);
+  line-height: 1.7;
+  margin: 10px 0 0;
 }
 #welcome .invite-line {
   font-size: 19px;
@@ -298,7 +309,7 @@ section {
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(121,21,38,0.18);
-  background: linear-gradient(135deg, rgb(209,140,71), rgb(158,102,46));
+  background: linear-gradient(135deg, #B62039, #5C0F14);
 }
 .scratch-reveal {
   padding: 40px 20px;
@@ -450,6 +461,7 @@ section {
 
 /* ---------------- Wardrobe Guide ---------------- */
 #wardrobe { background: var(--paper); }
+.wardrobe-monogram { width: 56px; height: 56px; object-fit: contain; opacity: 0.8; margin: 0 auto 8px; display: block; }
 .wardrobe-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -460,28 +472,52 @@ section {
   .wardrobe-grid { grid-template-columns: 1fr; }
 }
 .wardrobe-card {
-  border-radius: 14px;
-  padding: 26px 18px;
-  background: var(--cream);
-  border: 1px solid rgba(121,21,38,0.1);
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  text-align: left;
+  border-radius: 24px;
+  padding: 24px;
+  background: rgba(255,255,255,0.7);
+  border: 0.8px solid rgba(236,198,204,0.6);
+  box-shadow: 0 8px 30px -10px rgba(89,38,47,0.14);
+  backdrop-filter: blur(4px);
 }
-.wardrobe-card img { margin: 0 auto 14px; max-height: 70px; }
+.wardrobe-icon {
+  flex-shrink: 0;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 1.6px solid rgba(236,198,204,0.6);
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: 0 8px 30px -10px rgba(89,38,47,0.14);
+}
+.wardrobe-icon img { width: 100%; height: 100%; object-fit: cover; margin: 0; max-height: none; }
+.wardrobe-text { flex: 1; min-width: 0; }
 .wardrobe-card h4 {
   font-family: var(--font-heading);
-  letter-spacing: 0.08em;
-  font-size: 18px;
-  margin: 0 0 4px;
+  letter-spacing: 0.15em;
+  font-weight: 700;
+  font-size: 16px;
+  margin: 0 0 2px;
 }
 .wardrobe-card .sub {
-  font-style: italic;
-  font-weight: 600;
-  margin-bottom: 8px;
+  font-family: var(--font-script);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 1;
+  margin-bottom: 6px;
 }
-.wardrobe-card p { font-size: 14px; opacity: 0.8; margin: 0; }
-#card-w-haldi h4, #card-w-haldi .sub { color: var(--haldi); }
-#card-w-mehndi h4, #card-w-mehndi .sub { color: var(--mehndi); }
-#card-w-sangeet h4, #card-w-sangeet .sub { color: var(--sangeet); }
-#card-w-wedding h4, #card-w-wedding .sub { color: var(--wedding); }
+.wardrobe-card p { font-size: 15px; line-height: 1.6; opacity: 0.8; margin: 0; text-align: left; }
+#card-w-haldi h4 { color: #B45309; } #card-w-haldi .sub { color: #D97706; }
+#card-w-mehndi h4 { color: #065F46; } #card-w-mehndi .sub { color: #047857; }
+#card-w-sangeet h4 { color: #3730A3; } #card-w-sangeet .sub { color: #4338CA; }
+#card-w-wedding h4 { color: #9F1239; } #card-w-wedding .sub { color: #BE123C; }
 
 /* ---------------- Awaiting presence ---------------- */
 #presence .lead {
