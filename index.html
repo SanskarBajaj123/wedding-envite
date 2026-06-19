@@ -15,11 +15,32 @@
 <!-- Falling petals decorative overlay -->
 <div id="petal-field"></div>
 
+<!-- Persistent flying butterfly -->
+<div class="butterfly-path" aria-hidden="true">
+  <span class="butterfly-wings">
+    <svg width="38" height="32" viewBox="0 0 64 52" xmlns="http://www.w3.org/2000/svg">
+      <g>
+        <ellipse cx="32" cy="26" rx="1.6" ry="11" fill="#1f2937"></ellipse>
+        <circle cx="32" cy="14" r="2.2" fill="#1f2937"></circle>
+        <path d="M32 13 C 29 8, 27 6, 25 5" stroke="#1f2937" stroke-width="1" fill="none" stroke-linecap="round"></path>
+        <path d="M32 13 C 35 8, 37 6, 39 5" stroke="#1f2937" stroke-width="1" fill="none" stroke-linecap="round"></path>
+        <path d="M30 22 C 10 10, 2 22, 6 32 C 10 42, 24 38, 30 30 Z" fill="#3b82f6" opacity="0.95"></path>
+        <path d="M30 30 C 18 38, 10 44, 14 48 C 20 50, 28 42, 30 36 Z" fill="#60a5fa" opacity="0.95"></path>
+        <path d="M34 22 C 54 10, 62 22, 58 32 C 54 42, 40 38, 34 30 Z" fill="#3b82f6" opacity="0.95"></path>
+        <path d="M34 30 C 46 38, 54 44, 50 48 C 44 50, 36 42, 34 36 Z" fill="#60a5fa" opacity="0.95"></path>
+        <circle cx="14" cy="26" r="1.6" fill="#fff" opacity="0.85"></circle>
+        <circle cx="50" cy="26" r="1.6" fill="#fff" opacity="0.85"></circle>
+      </g>
+    </svg>
+  </span>
+</div>
+
 <!-- Cover / Envelope screen -->
 <div id="cover">
-  <img class="ganesh" src="https://swapnil-ritu.invitationmedia.in/assets/ganesh-idol-TubyYjSJ.png" alt="Ganesh">
+  <img class="ganesh" src="assets/ganesh-idol-TubyYjSJ.png" alt="Ganesh">
   <div class="envelope-wrap">
-    <img src="https://swapnil-ritu.invitationmedia.in/assets/maroonenvelop-DVcZBctQ.png" alt="Open invitation envelope">
+    <img src="assets/maroonenvelop-DVcZBctQ.png" alt="Open invitation envelope">
+    <span class="wax-seal"><img src="assets/ASlogo-DWhlfaJZ.png" alt="SR wax seal monogram"></span>
   </div>
   <h2>YOU'RE INVITED</h2>
   <p><em>Tap the envelope to open our invitation</em></p>
@@ -28,7 +49,7 @@
 <!-- Floating audio toggle -->
 <button id="audio-toggle" aria-label="Toggle background music">&#128264;</button>
 <audio id="bg-audio" loop preload="none">
-  <source src="https://swapnil-ritu.invitationmedia.in/audio/background.mp3" type="audio/mpeg">
+  <source src="assets/background.mp3" type="audio/mpeg">
 </audio>
 
 <main id="main-content">
@@ -36,7 +57,7 @@
   <!-- Welcome / Shloka -->
   <section id="welcome">
     <div class="section-inner">
-      <img class="ganesh" src="https://swapnil-ritu.invitationmedia.in/assets/ganesh-idol-TubyYjSJ.png" alt="Ganesh">
+      <img class="ganesh" src="assets/ganesh-idol-TubyYjSJ.png" alt="Ganesh">
       <div class="pill shloka-pill">|| Om Shree Ganeshaya Namah ||</div>
       <div class="shloka-box">
         <p class="shloka-deva">मङ्गलम् भगवान विष्णुः मङ्गलम् गरुडध्वजः ।<br>मङ्गलम् पुण्डरी काक्षः मङ्गलाय तनो हरिः ।।</p>
@@ -54,6 +75,10 @@
       <h1 class="couple-name">Ritu</h1>
       <p class="parent-line">D/o Mr. Manoj Kumar Pathak &amp; Mrs. Bachchi Devi</p>
       <p class="grandparent-line">Granddaughter of Mr. Shovakant Pathak &amp; Late Mrs. Prabha Devi</p>
+
+      <div class="shiva-parvati-wrap">
+        <img src="assets/g-shiva-parvati-D5GA8Xot.png" alt="Shiva-Parvati wedding caricature">
+      </div>
     </div>
   </section>
 
@@ -90,7 +115,7 @@
 
       <!-- Haldi -->
       <div class="event-card" id="card-haldi">
-        <div class="frame"><img src="https://swapnil-ritu.invitationmedia.in/assets/haldi-B4kzVy-F.png" alt="Haldi ceremony couple illustration"></div>
+        <div class="frame"><img src="assets/haldi-B4kzVy-F.png" alt="Haldi ceremony couple illustration"></div>
         <div class="panel">
           <div class="monogram">SR</div>
           <div class="hashtag">#SunMeetsSky</div>
@@ -103,7 +128,7 @@
 
       <!-- Mehndi -->
       <div class="event-card" id="card-mehndi">
-        <div class="frame"><img src="https://swapnil-ritu.invitationmedia.in/assets/01-ojlgGeHc.png" alt="Mehndi ceremony couple illustration"></div>
+        <div class="frame"><img src="assets/01-ojlgGeHc.png" alt="Mehndi ceremony couple illustration"></div>
         <div class="panel">
           <div class="monogram">SR</div>
           <div class="hashtag">#MehndiHaiRachneWali</div>
@@ -116,7 +141,7 @@
 
       <!-- Sangeet -->
       <div class="event-card" id="card-sangeet">
-        <div class="frame"><img src="https://swapnil-ritu.invitationmedia.in/assets/03-CckZCPLj.png" alt="Sangeet celebration couple illustration"></div>
+        <div class="frame"><img src="assets/03-CckZCPLj.png" alt="Sangeet celebration couple illustration"></div>
         <div class="panel">
           <div class="monogram">SR</div>
           <div class="hashtag">#YeShaamShandaar</div>
@@ -129,7 +154,7 @@
 
       <!-- Wedding -->
       <div class="event-card" id="card-wedding">
-        <div class="frame"><img src="https://swapnil-ritu.invitationmedia.in/assets/04-CC6lrDGi.png" alt="Wedding ceremony couple illustration"></div>
+        <div class="frame"><img src="assets/04-CC6lrDGi.png" alt="Wedding ceremony couple illustration"></div>
         <div class="panel">
           <div class="monogram">SR</div>
           <div class="hashtag">#SwituKiWedding</div>
@@ -149,30 +174,31 @@
 
   <!-- Wardrobe Guide -->
   <section id="wardrobe">
+    <div class="hero-bg-overlay" style="opacity:0.12"></div>
     <div class="section-inner">
       <h2 class="section-title">WARDROBE GUIDE</h2>
       <div class="flower-divider">&#10052;</div>
       <div class="wardrobe-grid">
         <div class="wardrobe-card" id="card-w-haldi">
-          <img src="https://swapnil-ritu.invitationmedia.in/assets/w-haldi-DjMtDyPQ.png" alt="Haldi wardrobe colors">
+          <img src="assets/w-haldi-DjMtDyPQ.png" alt="Haldi wardrobe colors">
           <h4>HALDI</h4>
           <div class="sub">Sunshine Shades</div>
           <p>Think comfortable festive wear in cheerful shades of yellow.</p>
         </div>
         <div class="wardrobe-card" id="card-w-mehndi">
-          <img src="https://swapnil-ritu.invitationmedia.in/assets/w-mehndi-CUpnixOF.png" alt="Mehndi wardrobe colors">
+          <img src="assets/w-mehndi-CUpnixOF.png" alt="Mehndi wardrobe colors">
           <h4>MEHNDI</h4>
           <div class="sub">Henna Hues</div>
           <p>Think vibrant greens with festive accents inspired by the colors of celebration.</p>
         </div>
         <div class="wardrobe-card" id="card-w-sangeet">
-          <img src="https://swapnil-ritu.invitationmedia.in/assets/w-sangeet-qh49Zsmo.png" alt="Sangeet wardrobe colors">
+          <img src="assets/w-sangeet-qh49Zsmo.png" alt="Sangeet wardrobe colors">
           <h4>SANGEET</h4>
           <div class="sub">Glitz &amp; Glam</div>
           <p>Think elegant Indo-Western silhouettes, fusion fits, and a touch of festive sparkle.</p>
         </div>
         <div class="wardrobe-card" id="card-w-wedding">
-          <img src="https://swapnil-ritu.invitationmedia.in/assets/w-wedding-BtwN4UQz.png" alt="Wedding wardrobe colors">
+          <img src="assets/w-wedding-BtwN4UQz.png" alt="Wedding wardrobe colors">
           <h4>WEDDING</h4>
           <div class="sub">Royal Wedding Hues</div>
           <p>Think timeless sarees, lehengas, sherwanis, and bandhgalas in rich, regal tones.</p>
@@ -195,6 +221,7 @@
 
   <!-- Venue -->
   <section id="venue">
+    <div class="hero-bg-overlay" style="opacity:0.08"></div>
     <div class="section-inner">
       <h2 class="section-title">WHERE WE CELEBRATE</h2>
       <div class="venue-name">The Pod Retreat</div>

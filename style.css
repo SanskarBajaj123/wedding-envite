@@ -25,8 +25,6 @@
   --font-heading: "Cinzel", serif;
   --font-body: "Cormorant Garamond", serif;
   --font-deva: "Tiro Devanagari Hindi", serif;
-
-  --asset: "https://swapnil-ritu.invitationmedia.in/assets/";
 }
 
 * { box-sizing: border-box; }
@@ -63,7 +61,7 @@ img { max-width: 100%; display: block; }
 }
 .petal {
   position: absolute;
-  top: -60px;
+  top: -10vh;
   width: 28px;
   height: 28px;
   opacity: 0.85;
@@ -71,9 +69,45 @@ img { max-width: 100%; display: block; }
   animation-timing-function: linear;
   animation-iteration-count: infinite;
 }
+.petal-emoji {
+  font-size: 22px;
+  line-height: 1;
+  width: auto;
+  height: auto;
+  background: none;
+}
 @keyframes fall {
-  0%   { transform: translateY(0) translateX(0) rotate(0deg); }
-  100% { transform: translateY(110vh) translateX(40px) rotate(360deg); }
+  0%   { opacity: 0; transform: translateY(0) translateX(0) rotate(0deg); }
+  10%  { opacity: 0.9; }
+  90%  { opacity: 0.9; }
+  100% { opacity: 0; transform: translateY(110vh) translateX(40px) rotate(360deg); }
+}
+
+/* ---------------- Persistent flying butterfly ---------------- */
+.butterfly-path {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 6;
+  animation: butterfly-fly 18s linear infinite;
+}
+.butterfly-wings {
+  position: absolute;
+  display: block;
+  animation: butterfly-flap 0.35s ease-in-out infinite;
+}
+@keyframes butterfly-fly {
+  0%   { transform: translate(10vw, 80vh) rotate(0deg); }
+  20%  { transform: translate(70vw, 30vh) rotate(15deg); }
+  40%  { transform: translate(85vw, 60vh) rotate(-10deg); }
+  60%  { transform: translate(40vw, 20vh) rotate(10deg); }
+  80%  { transform: translate(15vw, 50vh) rotate(-15deg); }
+  100% { transform: translate(10vw, 80vh) rotate(0deg); }
+}
+@keyframes butterfly-flap {
+  0%   { transform: scaleX(1); }
+  50%  { transform: scaleX(0.7); }
+  100% { transform: scaleX(1); }
 }
 
 /* ---------------- Audio toggle ---------------- */
@@ -109,7 +143,7 @@ img { max-width: 100%; display: block; }
   text-align: center;
   cursor: pointer;
   transition: opacity 0.8s ease, visibility 0.8s ease;
-  background-image: url('https://swapnil-ritu.invitationmedia.in/assets/g-envelope-bg-B_YE_ECq.png');
+  background-image: url('assets/g-envelope-bg-B_YE_ECq.png');
   background-size: cover;
   background-position: center;
 }
@@ -123,11 +157,27 @@ img { max-width: 100%; display: block; }
   margin-bottom: 18px;
 }
 #cover .envelope-wrap {
+  position: relative;
   width: 280px;
   transition: transform 0.4s ease;
 }
 #cover:hover .envelope-wrap { transform: translateY(-6px); }
 #cover .envelope-wrap img { width: 100%; }
+#cover .wax-seal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+#cover .wax-seal img { width: 100%; height: 100%; object-fit: cover; }
 #cover h2 {
   font-family: var(--font-heading);
   letter-spacing: 0.18em;
@@ -148,7 +198,18 @@ section {
   padding: 90px 20px;
   text-align: center;
 }
-.section-inner { max-width: 880px; margin: 0 auto; }
+.section-inner { max-width: 880px; margin: 0 auto; position: relative; z-index: 1; }
+
+/* ---------------- Faint full-bleed hero background overlay ---------------- */
+.hero-bg-overlay {
+  position: absolute;
+  inset: 0;
+  background-image: url('assets/wedding-hero-BBfn2Y6k.jpg');
+  background-size: cover;
+  background-position: center;
+  pointer-events: none;
+  z-index: 0;
+}
 
 .flower-divider {
   font-size: 22px;
@@ -158,7 +219,7 @@ section {
 
 /* ---------------- Welcome / Shloka ---------------- */
 #welcome {
-  background-image: url('https://swapnil-ritu.invitationmedia.in/assets/g-welcome-bg-BCda9f2G.png');
+  background-image: url('assets/g-welcome-bg-BCda9f2G.png');
   background-size: cover;
   background-position: top center;
   background-repeat: no-repeat;
@@ -216,6 +277,13 @@ section {
   font-size: 28px;
   color: var(--gold-dark);
   margin: 10px 0;
+}
+.shiva-parvati-wrap {
+  margin-top: 30px;
+}
+.shiva-parvati-wrap img {
+  width: 140px;
+  margin: 0 auto;
 }
 
 /* ---------------- Save the Date / Scratch card ---------------- */
@@ -371,13 +439,13 @@ section {
 .event-card .timeline .item { font-size: 14px; }
 .event-card .timeline .item .t { display: block; font-family: var(--font-heading); font-size: 16px; margin-top: 4px; }
 
-#card-haldi .frame { background-image: url('https://swapnil-ritu.invitationmedia.in/assets/g-haldi-bg-CB-4YaJG.png'); }
+#card-haldi .frame { background-image: url('assets/g-haldi-bg-CB-4YaJG.png'); }
 #card-haldi .panel { background: var(--haldi-bg); color: var(--haldi); }
-#card-mehndi .frame { background-image: url('https://swapnil-ritu.invitationmedia.in/assets/g-mehndi-bg-qHMm73q3.png'); }
+#card-mehndi .frame { background-image: url('assets/g-mehndi-bg-qHMm73q3.png'); }
 #card-mehndi .panel { background: var(--mehndi-bg); color: var(--mehndi); }
-#card-sangeet .frame { background-image: url('https://swapnil-ritu.invitationmedia.in/assets/g-sangeet-bg-B0tRJ9nE.png'); }
+#card-sangeet .frame { background-image: url('assets/g-sangeet-bg-B0tRJ9nE.png'); }
 #card-sangeet .panel { background: var(--sangeet-bg); color: var(--sangeet); }
-#card-wedding .frame { background-image: url('https://swapnil-ritu.invitationmedia.in/assets/g-wedding-bg-8_wipKLl.png'); }
+#card-wedding .frame { background-image: url('assets/g-wedding-bg-8_wipKLl.png'); }
 #card-wedding .panel { background: var(--wedding-bg); color: var(--wedding); }
 
 /* ---------------- Wardrobe Guide ---------------- */

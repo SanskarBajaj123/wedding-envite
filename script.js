@@ -37,23 +37,32 @@ audioToggle.addEventListener('click', (e) => {
 // ---- Falling petals / daisies decorative animation ----
 const petalField = document.getElementById('petal-field');
 const PETAL_IMAGES = [
-  'https://swapnil-ritu.invitationmedia.in/assets/falling-daisy-DWyrh5i3.png',
-  'https://swapnil-ritu.invitationmedia.in/assets/falling-rose-petal-CzrX2ZBd.png'
+  'assets/falling-daisy-DWyrh5i3.png',
+  'assets/falling-rose-petal-CzrX2ZBd.png'
 ];
+const PETAL_EMOJIS = ['\u{1F33A}', '\u{1F343}'];
 
 function spawnPetal() {
-  const img = document.createElement('img');
-  img.className = 'petal';
-  img.src = PETAL_IMAGES[Math.floor(Math.random() * PETAL_IMAGES.length)];
   const startX = Math.random() * 100;
   const duration = 8 + Math.random() * 8;
   const size = 18 + Math.random() * 18;
-  img.style.left = startX + 'vw';
-  img.style.width = size + 'px';
-  img.style.height = size + 'px';
-  img.style.animationDuration = duration + 's';
-  petalField.appendChild(img);
-  setTimeout(() => img.remove(), duration * 1000 + 200);
+  let el;
+  if (Math.random() < 0.5) {
+    el = document.createElement('img');
+    el.className = 'petal';
+    el.src = PETAL_IMAGES[Math.floor(Math.random() * PETAL_IMAGES.length)];
+    el.style.width = size + 'px';
+    el.style.height = size + 'px';
+  } else {
+    el = document.createElement('div');
+    el.className = 'petal petal-emoji';
+    el.textContent = PETAL_EMOJIS[Math.floor(Math.random() * PETAL_EMOJIS.length)];
+    el.style.fontSize = size + 'px';
+  }
+  el.style.left = startX + 'vw';
+  el.style.animationDuration = duration + 's';
+  petalField.appendChild(el);
+  setTimeout(() => el.remove(), duration * 1000 + 200);
 }
 
 setInterval(spawnPetal, 900);
