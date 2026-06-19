@@ -597,6 +597,7 @@ section {
   background: linear-gradient(180deg, var(--footer-start), var(--footer-end));
   color: #f4dfc4;
   padding: 70px 20px 50px;
+  text-align: center;
 }
 #footer .with-love {
   font-family: var(--font-heading);
