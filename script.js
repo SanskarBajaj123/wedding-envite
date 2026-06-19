@@ -43,7 +43,9 @@ const PETAL_IMAGES = [
 const PETAL_EMOJIS = ['\u{1F33A}', '\u{1F343}'];
 
 function spawnPetal() {
-  const startX = Math.random() * 100;
+  // Keep petals out of the central reading column (text lives there) —
+  // spawn only in the left/right margins so they never drift over text.
+  const startX = Math.random() < 0.5 ? Math.random() * 22 : 78 + Math.random() * 22;
   const duration = 8 + Math.random() * 8;
   const size = 18 + Math.random() * 18;
   let el;

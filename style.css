@@ -222,8 +222,9 @@ section {
   min-height: 100vh;
   background-image: url('assets/g-welcome-bg-BCda9f2G.png');
   background-size: cover;
-  background-position: center center;
+  background-position: top center;
   background-repeat: no-repeat;
+  background-attachment: scroll;
   padding: 48px 20px;
   display: flex;
   flex-direction: column;
@@ -260,6 +261,17 @@ section {
   line-height: 1.7;
   margin: 10px 0 0;
 }
+#welcome .welcome-panel {
+  background: rgba(253,250,244,0.9);
+  border: 1.6px solid rgb(232,209,186);
+  border-radius: 20px;
+  padding: 34px 26px 30px;
+  margin: 0 auto;
+  max-width: 560px;
+  width: 100%;
+  box-shadow: 0 20px 60px -20px rgba(119,34,48,0.3);
+  backdrop-filter: blur(4px);
+}
 #welcome .invite-line {
   font-size: 19px;
   color: var(--maroon);
@@ -267,13 +279,13 @@ section {
   margin: 0 auto 22px;
 }
 #welcome .couple-name {
-  font-weight: 400;
   font-family: var(--font-script);
+  font-weight: 400;
   font-size: 80px;
   color: var(--rose);
   line-height: 1;
   margin: 6px 0;
-  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.05));
+  text-shadow: 0 2px 10px rgba(255,255,255,0.6);
 }
 #welcome .parent-line {
   font-size: 17px;
@@ -283,13 +295,13 @@ section {
   font-style: italic;
   font-size: 14px;
   color: #8a6a4f;
-  margin-bottom: 30px;
+  margin-bottom: 0;
 }
 #welcome .weds {
   font-family: var(--font-script-2);
   font-size: 28px;
   color: var(--gold-dark);
-  margin: 10px 0;
+  margin: 14px 0;
 }
 .shiva-parvati-wrap {
   margin-top: 30px;
@@ -443,14 +455,32 @@ section {
   opacity: 0.9;
 }
 .event-card .timeline {
-  margin-top: 24px;
-  display: flex;
-  justify-content: center;
-  gap: 28px;
-  flex-wrap: wrap;
+  margin-top: 28px;
+  text-align: left;
+  border-top: 1.5px solid rgba(0,0,0,0.14);
 }
-.event-card .timeline .item { font-size: 14px; }
-.event-card .timeline .item .t { display: block; font-family: var(--font-heading); font-size: 16px; margin-top: 4px; }
+.event-card .timeline .item {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 13px 4px;
+  border-bottom: 1.5px solid rgba(0,0,0,0.14);
+}
+.event-card .timeline .item .n {
+  font-size: 16px;
+  font-weight: 600;
+}
+.event-card .timeline .item .t {
+  font-family: var(--font-heading);
+  font-size: 13px;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  flex-shrink: 0;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.55);
+}
 
 #card-haldi .frame { background-image: url('assets/g-haldi-bg-CB-4YaJG.png'); }
 #card-haldi .panel { background: var(--haldi-bg); color: var(--haldi); }
@@ -460,66 +490,6 @@ section {
 #card-sangeet .panel { background: var(--sangeet-bg); color: var(--sangeet); }
 #card-wedding .frame { background-image: url('assets/g-wedding-bg-8_wipKLl.png'); }
 #card-wedding .panel { background: var(--wedding-bg); color: var(--wedding); }
-
-/* ---------------- Wardrobe Guide ---------------- */
-#wardrobe { background: var(--paper); }
-.wardrobe-monogram { width: 56px; height: 56px; object-fit: contain; opacity: 0.8; margin: 0 auto 8px; display: block; }
-.wardrobe-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 22px;
-  margin-top: 40px;
-}
-@media (max-width: 640px) {
-  .wardrobe-grid { grid-template-columns: 1fr; }
-}
-.wardrobe-card {
-  display: flex;
-  align-items: flex-start;
-  gap: 20px;
-  text-align: left;
-  border-radius: 24px;
-  padding: 24px;
-  background: rgba(255,255,255,0.7);
-  border: 0.8px solid rgba(236,198,204,0.6);
-  box-shadow: 0 8px 30px -10px rgba(89,38,47,0.14);
-  backdrop-filter: blur(4px);
-}
-.wardrobe-icon {
-  flex-shrink: 0;
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  border: 1.6px solid rgba(236,198,204,0.6);
-  background: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  box-shadow: 0 8px 30px -10px rgba(89,38,47,0.14);
-}
-.wardrobe-icon img { width: 100%; height: 100%; object-fit: cover; margin: 0; max-height: none; }
-.wardrobe-text { flex: 1; min-width: 0; }
-.wardrobe-card h4 {
-  font-family: var(--font-heading);
-  letter-spacing: 0.15em;
-  font-weight: 700;
-  font-size: 16px;
-  margin: 0 0 2px;
-}
-.wardrobe-card .sub {
-  font-family: var(--font-script);
-  font-style: normal;
-  font-weight: 400;
-  font-size: 24px;
-  line-height: 1;
-  margin-bottom: 6px;
-}
-.wardrobe-card p { font-size: 15px; line-height: 1.6; opacity: 0.8; margin: 0; text-align: left; }
-#card-w-haldi h4 { color: #B45309; } #card-w-haldi .sub { color: #D97706; }
-#card-w-mehndi h4 { color: #065F46; } #card-w-mehndi .sub { color: #047857; }
-#card-w-sangeet h4 { color: #3730A3; } #card-w-sangeet .sub { color: #4338CA; }
-#card-w-wedding h4 { color: #9F1239; } #card-w-wedding .sub { color: #BE123C; }
 
 /* ---------------- Awaiting presence ---------------- */
 #presence .lead {
