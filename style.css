@@ -1,0 +1,533 @@
+/* ============ Wedding Invitation — wedding-envite ============ */
+/* Rebuilt clone of swapnil-ritu.invitationmedia.in */
+
+:root {
+  --cream: #FBF7EF;
+  --paper: #FDFAF4;
+  --maroon: #791526;
+  --rose: #B62039;
+  --dark-red: #5C0F14;
+  --haldi: #B45309;
+  --haldi-bg: #FFFBEB;
+  --mehndi: #065F46;
+  --mehndi-bg: #ECFDF5;
+  --sangeet: #47296B;
+  --sangeet-bg: #F5F3FF;
+  --wedding: #7F1D1D;
+  --wedding-bg: #FEF2F2;
+  --gold: #D18C47;
+  --gold-dark: #9E662E;
+  --footer-start: #3A050B;
+  --footer-end: #5C0F14;
+
+  --font-script: "Great Vibes", cursive;
+  --font-script-2: "Alex Brush", cursive;
+  --font-heading: "Cinzel", serif;
+  --font-body: "Cormorant Garamond", serif;
+  --font-deva: "Tiro Devanagari Hindi", serif;
+
+  --asset: "https://swapnil-ritu.invitationmedia.in/assets/";
+}
+
+* { box-sizing: border-box; }
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--cream);
+  font-family: var(--font-body);
+  color: var(--maroon);
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+img { max-width: 100%; display: block; }
+
+.pill {
+  display: inline-block;
+  padding: 6px 22px;
+  border-radius: 999px;
+  font-family: var(--font-heading);
+  letter-spacing: 0.12em;
+  font-size: 12px;
+  background: rgba(255,255,255,0.6);
+  border: 1px solid rgba(180,83,9,0.25);
+}
+
+/* ---------------- Falling petals overlay ---------------- */
+#petal-field {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 5;
+  overflow: hidden;
+}
+.petal {
+  position: absolute;
+  top: -60px;
+  width: 28px;
+  height: 28px;
+  opacity: 0.85;
+  animation-name: fall;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+@keyframes fall {
+  0%   { transform: translateY(0) translateX(0) rotate(0deg); }
+  100% { transform: translateY(110vh) translateX(40px) rotate(360deg); }
+}
+
+/* ---------------- Audio toggle ---------------- */
+#audio-toggle {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--maroon);
+  color: #fff;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 50;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+}
+
+/* ---------------- Envelope cover screen ---------------- */
+#cover {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: var(--paper);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  cursor: pointer;
+  transition: opacity 0.8s ease, visibility 0.8s ease;
+  background-image: url('https://swapnil-ritu.invitationmedia.in/assets/g-envelope-bg-B_YE_ECq.png');
+  background-size: cover;
+  background-position: center;
+}
+#cover.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+#cover .ganesh {
+  width: 64px;
+  margin-bottom: 18px;
+}
+#cover .envelope-wrap {
+  width: 280px;
+  transition: transform 0.4s ease;
+}
+#cover:hover .envelope-wrap { transform: translateY(-6px); }
+#cover .envelope-wrap img { width: 100%; }
+#cover h2 {
+  font-family: var(--font-heading);
+  letter-spacing: 0.18em;
+  color: var(--maroon);
+  font-size: 28px;
+  margin: 28px 0 8px;
+}
+#cover p {
+  font-family: var(--font-body);
+  font-style: italic;
+  color: #8a6a4f;
+  font-size: 16px;
+}
+
+/* ---------------- Section base ---------------- */
+section {
+  position: relative;
+  padding: 90px 20px;
+  text-align: center;
+}
+.section-inner { max-width: 880px; margin: 0 auto; }
+
+.flower-divider {
+  font-size: 22px;
+  margin: 18px 0;
+  color: var(--gold-dark);
+}
+
+/* ---------------- Welcome / Shloka ---------------- */
+#welcome {
+  background-image: url('https://swapnil-ritu.invitationmedia.in/assets/g-welcome-bg-BCda9f2G.png');
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+  padding-top: 60px;
+}
+#welcome .ganesh { width: 70px; margin: 0 auto 14px; }
+#welcome .shloka-pill { margin-bottom: 18px; color: var(--maroon); }
+#welcome .shloka-box {
+  background: rgba(253,250,244,0.85);
+  border: 1px solid rgba(92,15,20,0.15);
+  border-radius: 8px;
+  padding: 18px 24px;
+  margin: 0 auto 16px;
+  max-width: 560px;
+}
+#welcome .shloka-deva {
+  font-family: var(--font-deva);
+  color: var(--dark-red);
+  font-size: 19px;
+  line-height: 1.7;
+  margin: 0;
+}
+#welcome .shloka-translit {
+  font-family: var(--font-heading);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  color: var(--maroon);
+  margin: 10px 0 40px;
+}
+#welcome .invite-line {
+  font-size: 19px;
+  color: var(--maroon);
+  max-width: 480px;
+  margin: 0 auto 22px;
+}
+#welcome .couple-name {
+  font-family: var(--font-script);
+  font-size: 80px;
+  color: var(--rose);
+  line-height: 1;
+  margin: 6px 0;
+}
+#welcome .parent-line {
+  font-size: 17px;
+  color: var(--maroon);
+}
+#welcome .grandparent-line {
+  font-style: italic;
+  font-size: 14px;
+  color: #8a6a4f;
+  margin-bottom: 30px;
+}
+#welcome .weds {
+  font-family: var(--font-script-2);
+  font-size: 28px;
+  color: var(--gold-dark);
+  margin: 10px 0;
+}
+
+/* ---------------- Save the Date / Scratch card ---------------- */
+#save-the-date { background: var(--paper); }
+.scratch-card-wrap {
+  max-width: 420px;
+  margin: 20px auto 0;
+  position: relative;
+}
+.scratch-card {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(121,21,38,0.18);
+  background: linear-gradient(135deg, rgb(209,140,71), rgb(158,102,46));
+}
+.scratch-reveal {
+  padding: 40px 20px;
+  color: #fff;
+  text-align: center;
+}
+.scratch-reveal h3 {
+  font-family: var(--font-heading);
+  letter-spacing: 0.15em;
+  font-size: 22px;
+  margin: 0 0 6px;
+}
+.scratch-reveal .date-line {
+  font-family: var(--font-script);
+  font-size: 34px;
+  margin-bottom: 18px;
+}
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+}
+.countdown .unit {
+  background: rgba(255,255,255,0.18);
+  border-radius: 10px;
+  padding: 10px 12px;
+  min-width: 60px;
+}
+.countdown .num {
+  font-size: 26px;
+  font-weight: 700;
+  font-family: var(--font-heading);
+}
+.countdown .label {
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+.scratch-overlay {
+  position: absolute;
+  inset: 0;
+  cursor: grab;
+  touch-action: none;
+}
+.scratch-hint {
+  position: absolute;
+  bottom: 8px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-family: var(--font-heading);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: rgba(255,255,255,0.85);
+  pointer-events: none;
+}
+
+/* ---------------- Events Schedule ---------------- */
+#events h2.section-title { font-size: 44px; }
+#events .subtitle {
+  font-family: var(--font-heading);
+  letter-spacing: 0.1em;
+  font-size: 13px;
+  color: var(--gold-dark);
+  margin-top: 6px;
+}
+
+.event-card {
+  margin: 50px auto 0;
+  max-width: 640px;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 10px 26px rgba(0,0,0,0.08);
+}
+.event-card .frame {
+  padding: 14px;
+  background-size: cover;
+  background-position: center;
+}
+.event-card .frame img {
+  border-radius: 10px;
+  width: 100%;
+  border: 3px solid rgba(255,255,255,0.7);
+}
+.event-card .panel {
+  padding: 34px 26px 40px;
+}
+.event-card .monogram {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: -56px auto 18px;
+  font-family: var(--font-script);
+  font-size: 18px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+}
+.event-card .hashtag {
+  font-family: var(--font-script-2);
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+.event-card .pill { margin-bottom: 14px; }
+.event-card .desc {
+  font-style: italic;
+  font-size: 16px;
+  max-width: 380px;
+  margin: 0 auto 16px;
+  opacity: 0.85;
+}
+.event-card h3.event-name {
+  font-family: var(--font-heading);
+  font-size: 28px;
+  margin: 6px 0 10px;
+  letter-spacing: 0.04em;
+}
+.event-card .datetime {
+  font-family: var(--font-heading);
+  font-size: 13px;
+  letter-spacing: 0.05em;
+  border: 1px solid currentColor;
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: 999px;
+  opacity: 0.9;
+}
+.event-card .timeline {
+  margin-top: 24px;
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+.event-card .timeline .item { font-size: 14px; }
+.event-card .timeline .item .t { display: block; font-family: var(--font-heading); font-size: 16px; margin-top: 4px; }
+
+#card-haldi .frame { background-image: url('https://swapnil-ritu.invitationmedia.in/assets/g-haldi-bg-CB-4YaJG.png'); }
+#card-haldi .panel { background: var(--haldi-bg); color: var(--haldi); }
+#card-mehndi .frame { background-image: url('https://swapnil-ritu.invitationmedia.in/assets/g-mehndi-bg-qHMm73q3.png'); }
+#card-mehndi .panel { background: var(--mehndi-bg); color: var(--mehndi); }
+#card-sangeet .frame { background-image: url('https://swapnil-ritu.invitationmedia.in/assets/g-sangeet-bg-B0tRJ9nE.png'); }
+#card-sangeet .panel { background: var(--sangeet-bg); color: var(--sangeet); }
+#card-wedding .frame { background-image: url('https://swapnil-ritu.invitationmedia.in/assets/g-wedding-bg-8_wipKLl.png'); }
+#card-wedding .panel { background: var(--wedding-bg); color: var(--wedding); }
+
+/* ---------------- Wardrobe Guide ---------------- */
+#wardrobe { background: var(--paper); }
+.wardrobe-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+  margin-top: 40px;
+}
+@media (max-width: 640px) {
+  .wardrobe-grid { grid-template-columns: 1fr; }
+}
+.wardrobe-card {
+  border-radius: 14px;
+  padding: 26px 18px;
+  background: var(--cream);
+  border: 1px solid rgba(121,21,38,0.1);
+}
+.wardrobe-card img { margin: 0 auto 14px; max-height: 70px; }
+.wardrobe-card h4 {
+  font-family: var(--font-heading);
+  letter-spacing: 0.08em;
+  font-size: 18px;
+  margin: 0 0 4px;
+}
+.wardrobe-card .sub {
+  font-style: italic;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.wardrobe-card p { font-size: 14px; opacity: 0.8; margin: 0; }
+#card-w-haldi h4, #card-w-haldi .sub { color: var(--haldi); }
+#card-w-mehndi h4, #card-w-mehndi .sub { color: var(--mehndi); }
+#card-w-sangeet h4, #card-w-sangeet .sub { color: var(--sangeet); }
+#card-w-wedding h4, #card-w-wedding .sub { color: var(--wedding); }
+
+/* ---------------- Awaiting presence ---------------- */
+#presence .lead {
+  font-size: 18px;
+  max-width: 480px;
+  margin: 16px auto 36px;
+}
+#presence .with-love {
+  font-family: var(--font-heading);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  color: var(--gold-dark);
+}
+#presence .family-name {
+  font-family: var(--font-script);
+  font-size: 40px;
+  color: var(--maroon);
+  margin: 6px 0 26px;
+}
+#presence .invited-by {
+  font-size: 15px;
+  opacity: 0.85;
+}
+#presence .invited-by .name {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 19px;
+  display: block;
+  margin: 4px 0;
+}
+
+/* ---------------- Venue ---------------- */
+#venue { background: var(--paper); }
+#venue .venue-name {
+  font-family: var(--font-script);
+  font-size: 44px;
+  color: var(--maroon);
+  margin: 4px 0 18px;
+}
+#venue .address {
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+#venue .tagline {
+  font-style: italic;
+  opacity: 0.8;
+  margin-bottom: 26px;
+}
+#venue .map-frame {
+  width: 100%;
+  max-width: 640px;
+  height: 260px;
+  border: 0;
+  border-radius: 14px;
+  margin: 0 auto 26px;
+  filter: sepia(8%);
+}
+#venue .directions-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, rgb(209,140,71), rgb(158,102,46));
+  color: #fff;
+  font-family: var(--font-heading);
+  letter-spacing: 0.08em;
+  font-size: 14px;
+  padding: 14px 30px;
+  border-radius: 999px;
+  text-decoration: none;
+  box-shadow: 0 8px 20px rgba(158,102,46,0.35);
+}
+
+/* ---------------- Footer ---------------- */
+#footer {
+  background: linear-gradient(180deg, var(--footer-start), var(--footer-end));
+  color: #f4dfc4;
+  padding: 70px 20px 50px;
+}
+#footer .with-love {
+  font-family: var(--font-heading);
+  letter-spacing: 0.15em;
+  font-size: 13px;
+  color: var(--gold);
+}
+#footer .couple {
+  font-family: var(--font-script);
+  font-size: 56px;
+  color: var(--gold);
+  margin: 8px 0 18px;
+}
+#footer .heart { font-size: 22px; margin-bottom: 16px; }
+#footer .daterange { font-family: var(--font-heading); font-size: 14px; letter-spacing: 0.05em; margin-bottom: 6px; }
+#footer .hashtag { font-family: var(--font-script-2); font-size: 18px; opacity: 0.9; }
+
+/* ---------------- Headings shared ---------------- */
+h2.section-title {
+  font-family: var(--font-heading);
+  color: var(--maroon);
+  letter-spacing: 0.06em;
+  font-size: 38px;
+  margin: 0;
+}
+.eyebrow {
+  font-family: var(--font-heading);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  color: var(--gold-dark);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+@media (max-width: 640px) {
+  #welcome .couple-name { font-size: 56px; }
+  h2.section-title { font-size: 28px; }
+  #footer .couple { font-size: 40px; }
+  #venue .venue-name { font-size: 32px; }
+}

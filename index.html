@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Wedding Invitation — Swapnil &amp; Ritu</title>
+<meta name="description" content="Wedding invitation for Swapnil &amp; Ritu, 5th-6th July 2026" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Alex+Brush&family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Tiro+Devanagari+Hindi:ital@0;1&family=Noto+Color+Emoji&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Falling petals decorative overlay -->
+<div id="petal-field"></div>
+
+<!-- Cover / Envelope screen -->
+<div id="cover">
+  <img class="ganesh" src="https://swapnil-ritu.invitationmedia.in/assets/ganesh-idol-TubyYjSJ.png" alt="Ganesh">
+  <div class="envelope-wrap">
+    <img src="https://swapnil-ritu.invitationmedia.in/assets/maroonenvelop-DVcZBctQ.png" alt="Open invitation envelope">
+  </div>
+  <h2>YOU'RE INVITED</h2>
+  <p><em>Tap the envelope to open our invitation</em></p>
+</div>
+
+<!-- Floating audio toggle -->
+<button id="audio-toggle" aria-label="Toggle background music">&#128264;</button>
+<audio id="bg-audio" loop preload="none">
+  <source src="https://swapnil-ritu.invitationmedia.in/audio/background.mp3" type="audio/mpeg">
+</audio>
+
+<main id="main-content">
+
+  <!-- Welcome / Shloka -->
+  <section id="welcome">
+    <div class="section-inner">
+      <img class="ganesh" src="https://swapnil-ritu.invitationmedia.in/assets/ganesh-idol-TubyYjSJ.png" alt="Ganesh">
+      <div class="pill shloka-pill">|| Om Shree Ganeshaya Namah ||</div>
+      <div class="shloka-box">
+        <p class="shloka-deva">मङ्गलम् भगवान विष्णुः मङ्गलम् गरुडध्वजः ।<br>मङ्गलम् पुण्डरी काक्षः मङ्गलाय तनो हरिः ।।</p>
+      </div>
+      <p class="shloka-translit">MANGALAM BHAGWAN VISHNU &middot; MANGALAM GARUDADHWAJAH<br>MANGALAM PUNDARIKAKSHAH &middot; MANGALAYA TANO HARIH</p>
+
+      <p class="invite-line">We request the honor of your gracious presence on the auspicious occasion of the wedding celebration of</p>
+
+      <h1 class="couple-name">Swapnil</h1>
+      <p class="parent-line">S/o Mr. Srinivas Gudimalla &amp; Mrs. Sunitha Gudimalla</p>
+      <p class="grandparent-line">Grandson of Late Mr. Ramulu &amp; Mrs. Gouru Bai</p>
+
+      <div class="weds">weds</div>
+
+      <h1 class="couple-name">Ritu</h1>
+      <p class="parent-line">D/o Mr. Manoj Kumar Pathak &amp; Mrs. Bachchi Devi</p>
+      <p class="grandparent-line">Granddaughter of Mr. Shovakant Pathak &amp; Late Mrs. Prabha Devi</p>
+    </div>
+  </section>
+
+  <!-- Save the Date -->
+  <section id="save-the-date">
+    <div class="section-inner">
+      <h2 class="section-title">SAVE THE DATE</h2>
+      <div class="flower-divider">&#10052;</div>
+      <div class="scratch-card-wrap">
+        <div class="scratch-card">
+          <div class="scratch-reveal">
+            <h3>SAVE THE DATE</h3>
+            <div class="date-line">6th July 2026</div>
+            <div class="countdown" id="countdown">
+              <div class="unit"><div class="num" id="cd-days">00</div><div class="label">Days</div></div>
+              <div class="unit"><div class="num" id="cd-hours">00</div><div class="label">Hours</div></div>
+              <div class="unit"><div class="num" id="cd-mins">00</div><div class="label">Minutes</div></div>
+              <div class="unit"><div class="num" id="cd-secs">00</div><div class="label">Seconds</div></div>
+            </div>
+          </div>
+          <canvas class="scratch-overlay" id="scratch-canvas"></canvas>
+          <div class="scratch-hint" id="scratch-hint">SCRATCH TO REVEAL</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Events Schedule -->
+  <section id="events">
+    <div class="section-inner">
+      <h2 class="section-title">EVENTS SCHEDULE</h2>
+      <div class="subtitle">CELEBRATE WITH US</div>
+      <div class="flower-divider">&#10052;</div>
+
+      <!-- Haldi -->
+      <div class="event-card" id="card-haldi">
+        <div class="frame"><img src="https://swapnil-ritu.invitationmedia.in/assets/haldi-B4kzVy-F.png" alt="Haldi ceremony couple illustration"></div>
+        <div class="panel">
+          <div class="monogram">SR</div>
+          <div class="hashtag">#SunMeetsSky</div>
+          <div class="pill">PLEASE JOIN US FOR A MORNING</div>
+          <p class="desc">Filled with love, laughter and turmeric.</p>
+          <h3 class="event-name">HALDI CEREMONY</h3>
+          <div class="datetime">5th July 2026 | 10:00 AM</div>
+        </div>
+      </div>
+
+      <!-- Mehndi -->
+      <div class="event-card" id="card-mehndi">
+        <div class="frame"><img src="https://swapnil-ritu.invitationmedia.in/assets/01-ojlgGeHc.png" alt="Mehndi ceremony couple illustration"></div>
+        <div class="panel">
+          <div class="monogram">SR</div>
+          <div class="hashtag">#MehndiHaiRachneWali</div>
+          <div class="pill">PLEASE JOIN US FOR AN AFTERNOON</div>
+          <p class="desc">Filled with vibrant hues, joyful moments and the fragrance of henna.</p>
+          <h3 class="event-name">MEHNDI CEREMONY</h3>
+          <div class="datetime">5th July 2026 | 2:00 PM</div>
+        </div>
+      </div>
+
+      <!-- Sangeet -->
+      <div class="event-card" id="card-sangeet">
+        <div class="frame"><img src="https://swapnil-ritu.invitationmedia.in/assets/03-CckZCPLj.png" alt="Sangeet celebration couple illustration"></div>
+        <div class="panel">
+          <div class="monogram">SR</div>
+          <div class="hashtag">#YeShaamShandaar</div>
+          <div class="pill">PLEASE JOIN US FOR AN EVENING</div>
+          <p class="desc">Where melodies meet memories and hearts dance with joy.</p>
+          <h3 class="event-name">SANGEET CELEBRATION</h3>
+          <div class="datetime">5th July 2026 | 8:00 PM</div>
+        </div>
+      </div>
+
+      <!-- Wedding -->
+      <div class="event-card" id="card-wedding">
+        <div class="frame"><img src="https://swapnil-ritu.invitationmedia.in/assets/04-CC6lrDGi.png" alt="Wedding ceremony couple illustration"></div>
+        <div class="panel">
+          <div class="monogram">SR</div>
+          <div class="hashtag">#SwituKiWedding</div>
+          <div class="pill">PLEASE JOIN US FOR A SACRED CELEBRATION</div>
+          <p class="desc">As two hearts, two families and two journeys become one.</p>
+          <h3 class="event-name">WEDDING CEREMONY</h3>
+          <div class="datetime">6TH JULY 2026</div>
+          <div class="timeline">
+            <div class="item">&#10022; Baraat<span class="t">6:00 PM</span></div>
+            <div class="item">&#10022; Varmala<span class="t">8:00 PM</span></div>
+            <div class="item">&#10022; Rituals<span class="t">11:00 PM</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Wardrobe Guide -->
+  <section id="wardrobe">
+    <div class="section-inner">
+      <h2 class="section-title">WARDROBE GUIDE</h2>
+      <div class="flower-divider">&#10052;</div>
+      <div class="wardrobe-grid">
+        <div class="wardrobe-card" id="card-w-haldi">
+          <img src="https://swapnil-ritu.invitationmedia.in/assets/w-haldi-DjMtDyPQ.png" alt="Haldi wardrobe colors">
+          <h4>HALDI</h4>
+          <div class="sub">Sunshine Shades</div>
+          <p>Think comfortable festive wear in cheerful shades of yellow.</p>
+        </div>
+        <div class="wardrobe-card" id="card-w-mehndi">
+          <img src="https://swapnil-ritu.invitationmedia.in/assets/w-mehndi-CUpnixOF.png" alt="Mehndi wardrobe colors">
+          <h4>MEHNDI</h4>
+          <div class="sub">Henna Hues</div>
+          <p>Think vibrant greens with festive accents inspired by the colors of celebration.</p>
+        </div>
+        <div class="wardrobe-card" id="card-w-sangeet">
+          <img src="https://swapnil-ritu.invitationmedia.in/assets/w-sangeet-qh49Zsmo.png" alt="Sangeet wardrobe colors">
+          <h4>SANGEET</h4>
+          <div class="sub">Glitz &amp; Glam</div>
+          <p>Think elegant Indo-Western silhouettes, fusion fits, and a touch of festive sparkle.</p>
+        </div>
+        <div class="wardrobe-card" id="card-w-wedding">
+          <img src="https://swapnil-ritu.invitationmedia.in/assets/w-wedding-BtwN4UQz.png" alt="Wedding wardrobe colors">
+          <h4>WEDDING</h4>
+          <div class="sub">Royal Wedding Hues</div>
+          <p>Think timeless sarees, lehengas, sherwanis, and bandhgalas in rich, regal tones.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Awaiting Presence -->
+  <section id="presence">
+    <div class="section-inner">
+      <h2 class="section-title">Awaiting Your Noble Presence</h2>
+      <div class="flower-divider">&#10052;</div>
+      <p class="lead">Join us as we celebrate love, laughter, and the beginning of forever beautiful together. &#127760;</p>
+      <div class="with-love">WITH LOVE</div>
+      <div class="family-name">Gudimalla Family</div>
+      <p class="invited-by">LOVINGLY INVITED BY<span class="name">Abhishek Gudimalla</span>Eagerly awaiting the pleasure of your presence and blessings.</p>
+    </div>
+  </section>
+
+  <!-- Venue -->
+  <section id="venue">
+    <div class="section-inner">
+      <h2 class="section-title">WHERE WE CELEBRATE</h2>
+      <div class="venue-name">The Pod Retreat</div>
+      <div class="flower-divider">&#10052;</div>
+      <p class="address">Join us at the venue for these two days at:<br>&#128205; The Pod Retreat, Harshaguda, Hyderabad</p>
+      <p class="tagline">Where our forever begins.</p>
+      <iframe class="map-frame" loading="lazy" src="https://maps.google.com/maps?q=The%20Pod%20Retreat%2C%20Harshaguda%2C%20Hyderabad&output=embed"></iframe>
+      <br>
+      <a class="directions-btn" href="https://www.google.com/maps/search/?api=1&query=The%20Pod%20Retreat%2C%20Harshaguda%2C%20Hyderabad" target="_blank" rel="noopener">&#10148; Get Directions</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <div class="section-inner">
+      <div class="with-love">WITH LOVE</div>
+      <div class="couple">Swapnil &amp; Ritu</div>
+      <div class="heart">&#10084;&#65039;</div>
+      <div class="daterange">5th &ndash; 6th July 2026</div>
+      <div class="hashtag">#SwituKiWedding</div>
+    </div>
+  </footer>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
